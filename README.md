@@ -5,11 +5,15 @@
 It’s particularly useful for verifying **RPC responsiveness** and **transaction inclusion times** in zk-focused ecosystems like **Aztec** or **Zama**, where proof validity and sequencing consistency matter.
 
 ## Features
-- Tracks transaction receipt inclusion time  
-- Measures RPC latency and retry response  
-- Displays block number and transaction status  
-- Supports JSON output for monitoring and CI  
-- Works with Ethereum, L2s, and testnets  
+- ⏱️ Measure how long it takes for a transaction to appear on-chain  
+- ⚙️ Retry mechanism for delayed receipts  
+- 🧱 Display block number and transaction status (Success/Fail)  
+- ⛽ Show gas used and estimated transaction fee (ETH)  
+- 📊 Measure RPC response consistency  
+- 🧩 Validate transaction hash format before querying  
+- 🌍 Works with any EVM-compatible RPC (Ethereum, Polygon, Arbitrum, Optimism, Base, etc.)  
+- 🪶 Lightweight, no external APIs required  
+- 💾 Optional JSON output for monitoring and dashboards  
 
 ## Installation
 1. Requires Python 3.9+  
