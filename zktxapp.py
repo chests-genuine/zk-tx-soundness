@@ -53,7 +53,10 @@ def main() -> None:
     print("🔧 zk-tx-soundness")
     print(f"🔗 RPC: {args.rpc}")
     print(f"🔍 Transaction: {args.tx}")
-
+#Validate transaction hash format
+    if not args.tx.startswith("0x") or len(args.tx) != 66:
+        print("❌ Invalid transaction hash format. It should be a 0x-prefixed 66-character string.")
+        sys.exit(1)
     try:
         receipt_time = get_tx_receipt_latency(w3, args.tx, args.retries, args.delay)
     except Exception as e:
