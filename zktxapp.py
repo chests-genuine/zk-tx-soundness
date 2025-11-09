@@ -46,6 +46,17 @@ def main() -> None:
 
     w3 = Web3(Web3.HTTPProvider(args.rpc, request_kwargs={"timeout": 20}))
     if not w3.is_connected():
+        def _network_name(chain_id: int) -> str:
+    return {
+        1: "Ethereum Mainnet",
+        10: "Optimism",
+        137: "Polygon",
+        42161: "Arbitrum One",
+        11155111: "Sepolia",
+    }.get(chain_id, f"Unknown (chain ID {chain_id})")
+
+print(f"🌐 Connected to: {_network_name(w3.eth.chain_id)} (chainId {w3.eth.chain_id})")
+
         print("❌ RPC connection failed. Check your RPC_URL or --rpc argument.")
         sys.exit(1)
 
